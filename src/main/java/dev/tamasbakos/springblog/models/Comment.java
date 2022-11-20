@@ -1,12 +1,17 @@
 package dev.tamasbakos.springblog.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.annotation.Transient;
 
 public final class Comment {
 
+  @Id
+  @JsonIgnore
+  private Integer id;
   private String name;
   private String content;
   private LocalDateTime publishedOn;
@@ -27,6 +32,14 @@ public final class Comment {
     this.content = content;
     this.publishedOn = publishedOn;
     this.updatedOn = updatedOn;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   public String getName() {

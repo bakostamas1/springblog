@@ -21,6 +21,7 @@ create table IF NOT EXISTS Post (
 
 -- comment
 create table IF NOT EXISTS Comment(
+    id serial primary key ,
     post int not null,
     name varchar(100) not null,
     content text not null,

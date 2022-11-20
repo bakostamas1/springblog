@@ -21,7 +21,6 @@ create table IF NOT EXISTS Post (
 
 -- comment
 create table IF NOT EXISTS Comment(
-    id serial primary key ,
     post int not null,
     name varchar(100) not null,
     content text not null,
@@ -29,3 +28,6 @@ create table IF NOT EXISTS Comment(
     updated_on timestamp,
     foreign key (post) references Post(id)
     );
+
+-- add id column to comment table
+ALTER TABLE Comment ADD COLUMN id SERIAL PRIMARY KEY;

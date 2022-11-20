@@ -5,6 +5,7 @@ spring:
     url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
     name: blog
 
-  sql:
-    init:
-      mode: always
+# commented out, cus it is already deployment into Railway
+#  sql:
+#    init:
+#      mode: always

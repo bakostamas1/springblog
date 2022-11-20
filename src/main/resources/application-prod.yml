@@ -6,6 +6,6 @@ spring:
     name: blog
 
 # commented out, cus it is already deployment into Railway
-sql:
-  init:
-    mode: always
+#sql:
+#  init:
+#    mode: always

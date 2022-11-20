@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/posts")
 public class PostController {
 
   private static final Logger LOG = LoggerFactory.getLogger(PostController.class);
@@ -34,6 +33,11 @@ public class PostController {
   }
 
   @GetMapping
+  public String index() {
+    return "Hello in Tamas Bakos Blog!";
+  }
+
+  @GetMapping("/api/posts")
   public Iterable<Post> findAll() {
     return postService.findAllPosts();
   }

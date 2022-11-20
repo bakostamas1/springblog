@@ -19,7 +19,7 @@ public class SpringBlogApplication {
     SpringApplication.run(SpringBlogApplication.class, args);
   }
 
-  @Profile({"dev", "prod"})
+  @Profile({"dev"/*, "prod"*/})
   @Bean
   CommandLineRunner run(PostRepository postRepository, AuthorRepository authorRepository) {
     return args -> {
